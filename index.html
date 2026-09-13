@@ -23,14 +23,20 @@
       --green-light: #e8f1ec;
 
       --gold: #c99535;
+      --gold-dark: #7b571d;
       --gold-light: #fff5dc;
 
-      --blue-light: #eef7fb;
+      --blue-dark: #466d85;
+      --blue-light: #eef6fb;
 
-      --border: #e6e6df;
-      --shadow: 0 10px 35px rgba(39, 57, 48, 0.08);
+      --border: #e4e6e1;
+
+      --shadow:
+        0 10px 35px rgba(39, 57, 48, 0.08);
 
       --radius: 24px;
+
+      --nav-height: 64px;
     }
 
     * {
@@ -39,10 +45,12 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 95px;
     }
 
     body {
       margin: 0;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -69,10 +77,15 @@
       color: inherit;
     }
 
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     .container {
       width: min(1080px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 28px 0 70px;
+      padding: 28px 0 90px;
     }
 
     /* ==============================
@@ -81,6 +94,7 @@
 
     .hero {
       padding: 34px;
+
       border-radius: 30px;
 
       background:
@@ -91,6 +105,7 @@
         );
 
       border: 1px solid #d7e3dc;
+
       box-shadow: var(--shadow);
 
       margin-bottom: 22px;
@@ -98,9 +113,10 @@
 
     .hero-kicker {
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--green-dark);
       margin-bottom: 6px;
+      letter-spacing: .08em;
     }
 
     h1 {
@@ -135,16 +151,88 @@
       padding: 7px 12px;
 
       border-radius: 999px;
-      background: rgba(255,255,255,.78);
 
-      border: 1px solid rgba(90,120,104,.15);
+      background:
+        rgba(255,255,255,.78);
+
+      border:
+        1px solid rgba(90,120,104,.15);
 
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     /* ==============================
-       CORE NOTICE
+       STICKY DAY NAV
+    ============================== */
+
+    .day-nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 9000;
+
+      padding: 9px 0;
+
+      background:
+        rgba(246, 245, 240, .88);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border-bottom:
+        1px solid rgba(220, 222, 216, .8);
+
+      margin-bottom: 20px;
+    }
+
+    .day-nav {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .day-nav a {
+      text-decoration: none;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 44px;
+
+      padding: 8px 10px;
+
+      border-radius: 14px;
+
+      background: white;
+
+      border: 1px solid #dfe3df;
+
+      color: var(--green-dark);
+
+      font-size: 14px;
+      font-weight: 900;
+
+      box-shadow:
+        0 4px 12px rgba(40,55,47,.04);
+
+      transition:
+        transform .15s ease,
+        background .15s ease,
+        color .15s ease;
+    }
+
+    .day-nav a:hover {
+      transform: translateY(-1px);
+      background: var(--green-dark);
+      color: white;
+    }
+
+    /* ==============================
+       CORE NOTE
     ============================== */
 
     .core-note {
@@ -156,15 +244,55 @@
 
       border: 1px solid #edd8aa;
 
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
 
     .core-note strong {
-      color: #7c5a1f;
+      color: var(--gold-dark);
     }
 
     /* ==============================
-       DAY CARD
+       LEGEND
+    ============================== */
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+
+      margin-bottom: 22px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+      padding: 7px 11px;
+
+      border-radius: 999px;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .legend-fixed {
+      background: var(--green-light);
+      color: var(--green-dark);
+    }
+
+    .legend-option {
+      background: var(--blue-light);
+      color: var(--blue-dark);
+    }
+
+    .legend-primary {
+      background: var(--gold-light);
+      color: var(--gold-dark);
+    }
+
+    /* ==============================
+       DAY
     ============================== */
 
     .day-card {
@@ -187,6 +315,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+
       gap: 16px;
       flex-wrap: wrap;
 
@@ -217,7 +346,7 @@
       border: 1px solid #d3e3da;
 
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .day-body {
@@ -230,12 +359,16 @@
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 115px 1fr;
+
+      grid-template-columns:
+        115px 1fr;
+
       gap: 18px;
 
       padding: 18px 0;
 
-      border-bottom: 1px dashed #dedfd9;
+      border-bottom:
+        1px dashed #dedfd9;
     }
 
     .timeline-item:last-child {
@@ -269,8 +402,25 @@
       margin: 7px -12px;
     }
 
+    .fixed-label {
+      display: inline-flex;
+
+      margin-bottom: 6px;
+
+      padding: 4px 8px;
+
+      border-radius: 999px;
+
+      background: var(--green-light);
+
+      color: var(--green-dark);
+
+      font-size: 11px;
+      font-weight: 900;
+    }
+
     /* ==============================
-       BUTTONS
+       MAP BUTTON
     ============================== */
 
     .buttons {
@@ -283,8 +433,10 @@
 
     .map-button {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
+
       gap: 6px;
 
       min-height: 38px;
@@ -294,6 +446,7 @@
       border-radius: 10px;
 
       background: var(--green-dark);
+
       color: white;
 
       font-weight: 800;
@@ -311,37 +464,61 @@
       opacity: .92;
     }
 
-    .map-button.secondary {
-      background: #edf3ef;
-      color: var(--green-dark);
-
-      border: 1px solid #d5e2db;
-    }
-
     /* ==============================
        OPTIONS
     ============================== */
 
     .options-area {
-      margin: 18px 0;
+      margin: 20px 0;
 
       padding: 18px;
 
-      border-radius: 20px;
+      border-radius: 21px;
 
-      background: var(--blue-light);
+      background:
+        linear-gradient(
+          145deg,
+          #edf6fb,
+          #f7fafb
+        );
 
-      border: 1px solid #d8e8ef;
+      border:
+        1px solid #d5e6ef;
+    }
+
+    .options-head {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 5px;
     }
 
     .options-title {
-      margin: 0 0 5px;
+      margin: 0;
       font-size: 19px;
+      color: var(--blue-dark);
+    }
+
+    .optional-badge {
+      padding: 5px 9px;
+
+      border-radius: 999px;
+
+      background: #dcecf5;
+
+      color: var(--blue-dark);
+
+      font-size: 11px;
+      font-weight: 900;
     }
 
     .options-subtitle {
-      color: var(--muted);
       margin-bottom: 15px;
+      color: var(--muted);
       font-size: 14px;
     }
 
@@ -349,7 +526,10 @@
       display: grid;
 
       grid-template-columns:
-        repeat(auto-fit, minmax(235px, 1fr));
+        repeat(
+          auto-fit,
+          minmax(235px, 1fr)
+        );
 
       gap: 13px;
     }
@@ -357,23 +537,31 @@
     .option-card {
       position: relative;
 
+      display: flex;
+      flex-direction: column;
+
+      min-height: 205px;
+
       padding: 16px;
 
       border-radius: 17px;
 
       background: white;
 
-      border: 1px solid #dae4e7;
+      border: 1px solid #d9e4e9;
 
-      min-height: 190px;
-
-      display: flex;
-      flex-direction: column;
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
     }
 
-    /* ==============================
-       ⭐ 首選
-    ============================== */
+    .option-card:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 10px 25px
+        rgba(68, 96, 112, .09);
+    }
 
     .option-card.primary {
       border: 2px solid var(--gold);
@@ -382,12 +570,12 @@
         linear-gradient(
           145deg,
           #fffef9,
-          #fff6dd
+          #fff5da
         );
 
       box-shadow:
-        0 8px 24px
-        rgba(185, 135, 45, .14);
+        0 8px 25px
+        rgba(185, 135, 45, .15);
     }
 
     .primary-badge {
@@ -411,7 +599,6 @@
 
     .option-name {
       margin-bottom: 5px;
-
       font-size: 17px;
       font-weight: 900;
     }
@@ -419,7 +606,6 @@
     .option-desc {
       color: var(--muted);
       font-size: 14px;
-
       flex: 1;
     }
 
@@ -430,7 +616,8 @@
     .tag {
       display: inline-block;
 
-      margin: 3px 3px 0 0;
+      margin:
+        3px 3px 0 0;
 
       padding: 4px 8px;
 
@@ -450,14 +637,17 @@
     }
 
     /* ==============================
-       REMINDERS
+       REMINDER
     ============================== */
 
     .reminder-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(auto-fit, minmax(260px,1fr));
+        repeat(
+          auto-fit,
+          minmax(260px,1fr)
+        );
 
       gap: 15px;
     }
@@ -467,11 +657,14 @@
 
       background: white;
 
-      border: 1px solid var(--border);
+      border:
+        1px solid var(--border);
 
       border-radius: 19px;
 
-      box-shadow: 0 6px 20px rgba(40,55,47,.04);
+      box-shadow:
+        0 6px 20px
+        rgba(40,55,47,.04);
     }
 
     .reminder h3 {
@@ -484,16 +677,152 @@
     }
 
     /* ==============================
+       FLOATING STORE BUTTON
+    ============================== */
+
+    .store-fab {
+      position: fixed;
+
+      right: 20px;
+      bottom: 20px;
+
+      z-index: 9999;
+
+      display: flex;
+
+      align-items: center;
+      gap: 7px;
+
+      padding:
+        12px 16px;
+
+      border: 0;
+
+      border-radius: 999px;
+
+      background:
+        var(--green-dark);
+
+      color: white;
+
+      font-family: inherit;
+
+      font-size: 14px;
+      font-weight: 900;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 12px 30px
+        rgba(37, 62, 51, .28);
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+    }
+
+    .store-fab:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 15px 35px
+        rgba(37, 62, 51, .32);
+    }
+
+    .store-fab:active {
+      transform: scale(.97);
+    }
+
+    .store-menu {
+      position: fixed;
+
+      right: 20px;
+      bottom: 78px;
+
+      z-index: 9998;
+
+      width: 225px;
+
+      padding: 10px;
+
+      border-radius: 17px;
+
+      background: white;
+
+      border: 1px solid #e0e5e1;
+
+      box-shadow:
+        0 14px 40px
+        rgba(35, 50, 43, .20);
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform:
+        translateY(8px)
+        scale(.98);
+
+      transition:
+        opacity .15s ease,
+        transform .15s ease;
+    }
+
+    .store-menu.show {
+      opacity: 1;
+
+      pointer-events: auto;
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+    .store-menu-title {
+      padding: 5px 9px 9px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .store-menu button {
+      width: 100%;
+
+      padding:
+        11px 12px;
+
+      margin: 2px 0;
+
+      border: 0;
+
+      border-radius: 11px;
+
+      background: transparent;
+
+      color: var(--text);
+
+      font-family: inherit;
+
+      font-size: 14px;
+      font-weight: 800;
+
+      text-align: left;
+
+      cursor: pointer;
+    }
+
+    .store-menu button:hover {
+      background: #f0f6f3;
+    }
+
+    /* ==============================
        FOOTER
     ============================== */
 
     footer {
       margin-top: 35px;
-
       text-align: center;
-
       color: var(--muted);
-
       font-size: 13px;
     }
 
@@ -504,23 +833,46 @@
     @media (max-width: 680px) {
 
       .container {
-        width: min(100% - 22px, 1080px);
+        width:
+          min(
+            calc(100% - 22px),
+            1080px
+          );
       }
 
       .hero {
-        padding: 25px 20px;
+        padding:
+          25px 20px;
+      }
+
+      .day-nav {
+        width:
+          min(
+            calc(100% - 22px),
+            1080px
+          );
+      }
+
+      .day-nav a {
+        min-height: 42px;
+        padding: 7px 5px;
+        font-size: 13px;
       }
 
       .day-header {
-        padding: 19px 17px;
+        padding:
+          19px 17px;
       }
 
       .day-body {
-        padding: 7px 17px 20px;
+        padding:
+          7px 17px 20px;
       }
 
       .timeline-item {
-        grid-template-columns: 88px 1fr;
+        grid-template-columns:
+          82px 1fr;
+
         gap: 11px;
       }
 
@@ -531,17 +883,35 @@
       .map-button {
         width: 100%;
       }
+
+      .store-fab {
+        right: 14px;
+        bottom: 15px;
+      }
+
+      .store-menu {
+        right: 14px;
+        bottom: 72px;
+
+        width:
+          min(
+            225px,
+            calc(100vw - 28px)
+          );
+      }
     }
+
   </style>
 </head>
 
+
 <body>
 
-<div class="container">
+<!-- ==============================
+     HERO + INTRO
+============================== -->
 
-  <!-- =======================================
-       HERO
-  ======================================== -->
+<div class="container">
 
   <header class="hero">
 
@@ -549,55 +919,138 @@
       YILAN FAMILY TRIP
     </div>
 
-    <h1>宜蘭三天兩夜</h1>
+    <h1>
+      宜蘭三天兩夜
+    </h1>
 
     <div class="hero-subtitle">
-      16 位大人 ＋ 5 位小孩<br>
+      16 位大人＋5 位小孩
+      <br>
       5歲・1歲半・1歲・8個月・7個月
     </div>
 
     <div class="chips">
-      <span class="chip">📅 9/14－9/16</span>
-      <span class="chip">👨‍👩‍👧‍👦 21 人</span>
-      <span class="chip">🏨 福朋喜來登</span>
-      <span class="chip">🏡 圍微住</span>
-      <span class="chip">👶 親子慢遊</span>
-      <span class="chip">🔄 現場彈性調整</span>
+
+      <span class="chip">
+        📅 9/14－9/16
+      </span>
+
+      <span class="chip">
+        👨‍👩‍👧‍👦 21 人
+      </span>
+
+      <span class="chip">
+        🏨 福朋喜來登
+      </span>
+
+      <span class="chip">
+        🏡 圍微住
+      </span>
+
+      <span class="chip">
+        👶 親子慢遊
+      </span>
+
+      <span class="chip">
+        🔄 彈性行程
+      </span>
+
     </div>
 
   </header>
 
+</div>
+
+
+<!-- ==============================
+     STICKY NAV
+============================== -->
+
+<nav class="day-nav-wrap">
+
+  <div class="day-nav">
+
+    <a href="#day1">
+      Day 1｜礁溪
+    </a>
+
+    <a href="#day2">
+      Day 2｜圍微住
+    </a>
+
+    <a href="#day3">
+      Day 3｜蘇澳
+    </a>
+
+  </div>
+
+</nav>
+
+
+<div class="container">
+
+  <!-- CORE NOTE -->
 
   <section class="core-note">
 
-    <strong>這次旅行的核心原則</strong>
+    <strong>
+      這趟旅行的核心
+    </strong>
 
     <br><br>
 
-    ① Day 1 不塞太多景點，
-    <strong>把福朋喜來登的設施玩好玩滿。</strong>
+    ① Day 1 不塞過多景點，
+    <strong>
+      把福朋喜來登設施玩好玩滿。
+    </strong>
 
     <br>
 
     ② Day 2 下午入住圍微住之後，
-    <strong>不再安排外出景點</strong>，
-    直接在民宿一路待到隔天退房。
+    <strong>
+      不再安排外出行程
+    </strong>
+    ，一路待到隔天退房。
 
     <br>
 
-    ③ 未確定的行程保留多個選項，
-    當天依照
-    <strong>天氣、孩子精神、午睡狀況與大家體力</strong>
-    再決定。
+    ③ 尚未確定的景點保留成備選，
+    依
+    <strong>
+      天氣、寶寶午睡、大家體力
+    </strong>
+    現場決定。
 
   </section>
 
 
-  <!-- =======================================
-       DAY 1
-  ======================================== -->
+  <!-- LEGEND -->
 
-  <section class="day-card">
+  <div class="legend">
+
+    <span class="legend-item legend-fixed">
+      ● 固定行程
+    </span>
+
+    <span class="legend-item legend-primary">
+      ⭐ 首選
+    </span>
+
+    <span class="legend-item legend-option">
+      ↔ 現場備選
+    </span>
+
+  </div>
+
+
+  <!-- ==============================
+       DAY 1
+  ============================== -->
+
+  <section
+    class="day-card"
+    id="day1"
+  >
 
     <div class="day-header">
 
@@ -614,6 +1067,7 @@
 
     <div class="day-body">
 
+
       <div class="timeline-item">
 
         <div class="time">
@@ -622,12 +1076,16 @@
 
         <div>
 
+          <div class="fixed-label">
+            固定
+          </div>
+
           <div class="event-title">
             🚗 台北集合出發
           </div>
 
           <div class="description">
-            預留雪隧路況以及 21 人集合時間。
+            預留雪隧路況與 21 人集合時間。
           </div>
 
         </div>
@@ -643,14 +1101,18 @@
 
         <div>
 
+          <div class="fixed-label">
+            固定
+          </div>
+
           <div class="event-title">
             🍲 上乘三家涮涮鍋・礁溪店
           </div>
 
           <div class="description">
-            Day 1 固定午餐。
-            21 人建議提前訂位並確認兒童椅。
+            Day 1 午餐。
           </div>
+
 
           <div class="buttons">
 
@@ -669,17 +1131,26 @@
       </div>
 
 
-      <!-- DAY 1 備用 -->
-
       <div class="options-area">
 
-        <h3 class="options-title">
-          午餐後的備用方案
-        </h3>
+        <div class="options-head">
+
+          <h3 class="options-title">
+            午餐後備用方案
+          </h3>
+
+          <span class="optional-badge">
+            現場決定
+          </span>
+
+        </div>
+
 
         <div class="options-subtitle">
-          原則上直接去飯店。
-          只有「時間很多＋飯店還不能使用設施」才從下面挑一個。
+          原則上直接去福朋。
+          <br>
+          只有「午餐提早結束＋飯店尚不能使用設施」
+          才從以下選一個。
         </div>
 
 
@@ -697,15 +1168,27 @@
             </div>
 
             <div class="option-desc">
-              室內海洋生態、水產、魚類、鯊魚與魟魚相關展示。
-              5歲孩子有內容，小小孩也能坐推車。
+              海洋生態、水產、魚類等展示。
+              5歲孩子有內容，
+              小寶寶則可坐推車。
             </div>
 
             <div class="tags">
-              <span class="tag">雨天OK</span>
-              <span class="tag">推車友善</span>
-              <span class="tag">60–90分鐘</span>
+
+              <span class="tag">
+                室內
+              </span>
+
+              <span class="tag">
+                雨天OK
+              </span>
+
+              <span class="tag">
+                60–90分鐘
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -729,15 +1212,26 @@
             </div>
 
             <div class="option-desc">
-              溫室、蘭花、觀葉植物與動植物生態。
-              適合走輕鬆路線。
+              蘭花、植物與動植物生態。
+              比較偏輕鬆散步型。
             </div>
 
             <div class="tags">
-              <span class="tag">室內/溫室</span>
-              <span class="tag">推車</span>
-              <span class="tag">60–90分鐘</span>
+
+              <span class="tag">
+                溫室
+              </span>
+
+              <span class="tag">
+                推車
+              </span>
+
+              <span class="tag">
+                60–90分鐘
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -761,14 +1255,23 @@
             </div>
 
             <div class="option-desc">
-              如果剩下不到一小時，
-              就不要再跑景點，附近散步後直接入住。
+              若只剩短時間，
+              就不要特地跑景點，
+              走走後直接去飯店。
             </div>
 
             <div class="tags">
-              <span class="tag">最省力</span>
-              <span class="tag">隨時取消</span>
+
+              <span class="tag">
+                最省力
+              </span>
+
+              <span class="tag">
+                可隨時取消
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -797,14 +1300,20 @@
 
         <div>
 
+          <div class="fixed-label">
+            核心行程
+          </div>
+
           <div class="event-title">
-            🏨 直接前往礁溪福朋喜來登
+            🏨 前往礁溪福朋喜來登
           </div>
 
           <div class="description">
             先停車、寄放行李、辦理報到。
-            如果飯店允許提早使用設施，就直接開始玩。
+            若飯店允許提前使用設施，
+            直接開始玩。
           </div>
+
 
           <div class="buttons">
 
@@ -831,12 +1340,12 @@
 
         <div>
 
-          <div class="event-title">
-            ✅ 正式 Check-in
+          <div class="fixed-label">
+            固定
           </div>
 
-          <div class="description">
-            拿到房間後進入飯店度假模式。
+          <div class="event-title">
+            ✅ Check-in
           </div>
 
         </div>
@@ -852,14 +1361,19 @@
 
         <div>
 
+          <div class="fixed-label">
+            核心行程
+          </div>
+
           <div class="event-title">
             🏊 9F 休閒中心
           </div>
 
           <div class="description">
-            無邊際泳池、兒童戲水池、
-            Fun 樂園、SPA 等自由分流。
-            小小孩累了可以直接回房午睡。
+            無邊際泳池、
+            兒童戲水池、
+            Fun 樂園、
+            SPA 自由分流。
           </div>
 
         </div>
@@ -870,35 +1384,33 @@
       <div class="timeline-item">
 
         <div class="time">
-          18:00後
+          晚上
         </div>
 
         <div>
 
           <div class="event-title">
-            🍽️ 晚餐＋泡湯＋自由活動
-          </div>
-
-          <div class="description">
-            晚餐後依照大家體力，
-            可以回遊戲室、泡湯或直接休息。
+            🍽️ 晚餐・泡湯・自由活動
           </div>
 
         </div>
 
       </div>
 
+
     </div>
 
   </section>
 
 
-
-  <!-- =======================================
+  <!-- ==============================
        DAY 2
-  ======================================== -->
+  ============================== -->
 
-  <section class="day-card">
+  <section
+    class="day-card"
+    id="day2"
+  >
 
     <div class="day-header">
 
@@ -907,7 +1419,7 @@
       </h2>
 
       <span class="day-theme">
-        🏡 下午開始包棟模式
+        🏡 包棟日
       </span>
 
     </div>
@@ -925,11 +1437,12 @@
         <div>
 
           <div class="event-title">
-            ☕ 飯店早餐
+            ☕ 福朋早餐
           </div>
 
           <div class="description">
-            不趕行程，讓有小小孩的家庭慢慢整理。
+            不趕行程，
+            讓帶小小孩的家庭慢慢整理。
           </div>
 
         </div>
@@ -946,7 +1459,7 @@
         <div>
 
           <div class="event-title">
-            🧳 整理行李・房內休息
+            🧳 整理行李・休息
           </div>
 
         </div>
@@ -961,6 +1474,10 @@
         </div>
 
         <div>
+
+          <div class="fixed-label">
+            固定
+          </div>
 
           <div class="event-title">
             Check-out
@@ -979,13 +1496,18 @@
 
         <div>
 
+          <div class="fixed-label">
+            固定
+          </div>
+
           <div class="event-title">
             🍗 大仁哥蔗香脆皮桶仔雞
           </div>
 
           <div class="description">
-            Day 2 固定午餐。
+            Day 2 午餐。
           </div>
+
 
           <div class="buttons">
 
@@ -1004,16 +1526,27 @@
       </div>
 
 
-
       <div class="options-area">
 
-        <h3 class="options-title">
-          午餐後｜現場選 1 個
-        </h3>
+        <div class="options-head">
+
+          <h3 class="options-title">
+            午餐後只選一個
+          </h3>
+
+          <span class="optional-badge">
+            現場決定
+          </span>
+
+        </div>
+
 
         <div class="options-subtitle">
-          原則只排一站。
-          如果孩子累了，全部取消直接去民宿也可以。
+          不需要全部跑。
+          <br>
+          若孩子已累，
+          這一整段也可以取消，
+          直接入住圍微住。
         </div>
 
 
@@ -1031,16 +1564,27 @@
             </div>
 
             <div class="option-desc">
-              最沒有壓力的方案。
+              節奏最輕鬆。
               推車散步、看湖、拍照，
               不用走完整環湖。
             </div>
 
             <div class="tags">
-              <span class="tag">免費</span>
-              <span class="tag">推車友善</span>
-              <span class="tag">60–90分鐘</span>
+
+              <span class="tag">
+                免費
+              </span>
+
+              <span class="tag">
+                推車友善
+              </span>
+
+              <span class="tag">
+                60–90分鐘
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -1065,15 +1609,26 @@
 
             <div class="option-desc">
               水草、生態、DIY。
-              若希望 Day 2 有一個比較完整的景點，
-              可改選這個。
+              如果想安排比較完整的親子景點，
+              可改這個。
             </div>
 
             <div class="tags">
-              <span class="tag">生態</span>
-              <span class="tag">5歲較有感</span>
-              <span class="tag">1.5–2小時</span>
+
+              <span class="tag">
+                生態
+              </span>
+
+              <span class="tag">
+                親子
+              </span>
+
+              <span class="tag">
+                1.5–2小時
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -1097,15 +1652,26 @@
             </div>
 
             <div class="option-desc">
-              如果下雨、太熱，
-              改成室內／半室內行程。
+              天氣太熱或下雨時，
+              適合改走室內／半室內。
             </div>
 
             <div class="tags">
-              <span class="tag">雨天首選</span>
-              <span class="tag">親子</span>
-              <span class="tag">1–1.5小時</span>
+
+              <span class="tag">
+                雨天推薦
+              </span>
+
+              <span class="tag">
+                親子
+              </span>
+
+              <span class="tag">
+                1–1.5小時
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -1129,15 +1695,26 @@
             </div>
 
             <div class="option-desc">
-              適合天氣好時走走、拍照，
-              不需要停留太久。
+              天氣好時走走、拍照，
+              適合短停。
             </div>
 
             <div class="tags">
-              <span class="tag">海線</span>
-              <span class="tag">免費</span>
-              <span class="tag">45–60分鐘</span>
+
+              <span class="tag">
+                免費
+              </span>
+
+              <span class="tag">
+                海線
+              </span>
+
+              <span class="tag">
+                45–60分鐘
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -1161,16 +1738,26 @@
             </div>
 
             <div class="option-desc">
-              如果大家不想玩景點，
-              想坐下來喝咖啡聊天，
-              可以改成休息型行程。
+              不想跑景點時，
+              可以喝咖啡、聊天、休息。
             </div>
 
             <div class="tags">
-              <span class="tag">咖啡</span>
-              <span class="tag">大人休息</span>
-              <span class="tag">21人需確認</span>
+
+              <span class="tag">
+                咖啡
+              </span>
+
+              <span class="tag">
+                大人休息
+              </span>
+
+              <span class="tag">
+                21人需確認
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -1194,15 +1781,26 @@
             </div>
 
             <div class="option-desc">
-              天氣很好時短暫看海。
-              不建議安排太久。
+              天氣好時短暫看海，
+              不建議停太久。
             </div>
 
             <div class="tags">
-              <span class="tag">看海</span>
-              <span class="tag">晴天</span>
-              <span class="tag">30–45分鐘</span>
+
+              <span class="tag">
+                海邊
+              </span>
+
+              <span class="tag">
+                晴天
+              </span>
+
+              <span class="tag">
+                30–45分鐘
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -1227,15 +1825,26 @@
 
             <div class="option-desc">
               海景咖啡廳。
-              目前以現場候位為主，
-              21 人團體風險較高，所以順位較後。
+              21人又無法保證候位，
+              所以順位較低。
             </div>
 
             <div class="tags">
-              <span class="tag">海景</span>
-              <span class="tag">咖啡</span>
-              <span class="tag">候位風險</span>
+
+              <span class="tag">
+                海景
+              </span>
+
+              <span class="tag">
+                咖啡
+              </span>
+
+              <span class="tag">
+                候位風險
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -1251,33 +1860,40 @@
 
           </article>
 
-
         </div>
 
       </div>
 
 
-
       <div class="timeline-item important">
 
         <div class="time">
-          約 15:00 後
+          下午
         </div>
 
         <div>
+
+          <div class="fixed-label">
+            核心行程
+          </div>
 
           <div class="event-title">
             🏡 入住圍微住
           </div>
 
           <div class="description">
+
             <strong>
-              從這個時間開始不再安排外出景點。
+              入住之後不再安排外出景點。
             </strong>
 
-            下午、晚上一路待在民宿，
-            隔天退房後才離開。
+            <br>
+
+            下午、晚上直接待在民宿，
+            一路到隔天退房。
+
           </div>
+
 
           <div class="buttons">
 
@@ -1309,9 +1925,9 @@
           </div>
 
           <div class="description">
-            小孩午睡、大人聊天、聚餐、
-            親子活動、宵夜、洗澡，
-            不再趕下一個景點。
+            午睡、聊天、親子活動、
+            聚餐、宵夜、洗澡，
+            不再趕下一站。
           </div>
 
         </div>
@@ -1324,12 +1940,14 @@
   </section>
 
 
-
-  <!-- =======================================
+  <!-- ==============================
        DAY 3
-  ======================================== -->
+  ============================== -->
 
-  <section class="day-card">
+  <section
+    class="day-card"
+    id="day3"
+  >
 
     <div class="day-header">
 
@@ -1350,13 +1968,13 @@
       <div class="timeline-item">
 
         <div class="time">
-          08:00–09:30
+          上午
         </div>
 
         <div>
 
           <div class="event-title">
-            🍞 民宿早餐＋整理
+            🍞 民宿早餐・整理
           </div>
 
         </div>
@@ -1372,47 +1990,41 @@
 
         <div>
 
+          <div class="fixed-label">
+            核心行程
+          </div>
+
           <div class="event-title">
             🏡 繼續享受圍微住
           </div>
 
           <div class="description">
-            不為了跑早場景點而提早離開。
-            民宿可以待到退房時間。
+            不特別提早退房去趕早場景點。
           </div>
 
         </div>
 
       </div>
-
-
-      <div class="timeline-item">
-
-        <div class="time">
-          約 10:00
-        </div>
-
-        <div>
-
-          <div class="event-title">
-            Check-out
-          </div>
-
-        </div>
-
-      </div>
-
 
 
       <div class="options-area">
 
-        <h3 class="options-title">
-          Day 3 上午
-        </h3>
+        <div class="options-head">
+
+          <h3 class="options-title">
+            退房後上午行程
+          </h3>
+
+          <span class="optional-badge">
+            現場決定
+          </span>
+
+        </div>
+
 
         <div class="options-subtitle">
-          午餐固定在大鯖魚夢工廠，
-          上午依照天氣調整。
+          午餐固定去大鯖魚夢工廠，
+          上午依天氣與精神狀況選擇。
         </div>
 
 
@@ -1430,16 +2042,26 @@
             </div>
 
             <div class="option-desc">
-              湖邊輕鬆散步、看風景、拍照。
-              不要求完整環湖，
-              走到大家覺得剛好即可。
+              湖邊散步、拍照、看風景。
+              不需要走完整環湖。
             </div>
 
             <div class="tags">
-              <span class="tag">晴天首選</span>
-              <span class="tag">自然</span>
-              <span class="tag">60–80分鐘</span>
+
+              <span class="tag">
+                晴天首選
+              </span>
+
+              <span class="tag">
+                自然
+              </span>
+
+              <span class="tag">
+                60–80分鐘
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -1463,15 +2085,26 @@
             </div>
 
             <div class="option-desc">
-              如果下雨，
-              可以改成室內海洋生態景點。
+              如果下雨或不想曬太陽，
+              可以改成室內方案。
             </div>
 
             <div class="tags">
-              <span class="tag">雨天替代</span>
-              <span class="tag">室內</span>
-              <span class="tag">推車</span>
+
+              <span class="tag">
+                雨天
+              </span>
+
+              <span class="tag">
+                室內
+              </span>
+
+              <span class="tag">
+                推車
+              </span>
+
             </div>
+
 
             <div class="buttons">
 
@@ -1491,17 +2124,25 @@
           <article class="option-card">
 
             <div class="option-name">
-              直接前往蘇澳
+              不排行程
             </div>
 
             <div class="option-desc">
-              如果前一晚大家玩得太晚，
-              上午直接不排景點。
+              前一晚玩太晚，
+              就直接慢慢退房，
+              再往蘇澳吃午餐。
             </div>
 
             <div class="tags">
-              <span class="tag">最輕鬆</span>
-              <span class="tag">寶寶累時</span>
+
+              <span class="tag">
+                最輕鬆
+              </span>
+
+              <span class="tag">
+                寶寶累時
+              </span>
+
             </div>
 
           </article>
@@ -1512,24 +2153,27 @@
       </div>
 
 
-
       <div class="timeline-item important">
 
         <div class="time">
-          約 12:00
+          約12:00
         </div>
 
         <div>
+
+          <div class="fixed-label">
+            固定
+          </div>
 
           <div class="event-title">
             🐟 大鯖魚夢工廠午餐
           </div>
 
           <div class="description">
-            Day 3 午餐固定安排在這裡。
-            吃完不用再移車，
-            直接留下來參觀。
+            午餐與參觀安排在同一地點，
+            少一次停車和集合。
           </div>
+
 
           <div class="buttons">
 
@@ -1561,7 +2205,7 @@
           </div>
 
           <div class="description">
-            室內參觀、互動展示、買伴手禮，
+            室內展示、伴手禮，
             作為回程前最後一站。
           </div>
 
@@ -1573,17 +2217,13 @@
       <div class="timeline-item">
 
         <div class="time">
-          約 15:00
+          約15:00
         </div>
 
         <div>
 
           <div class="event-title">
-            🚗 出發返回台北
-          </div>
-
-          <div class="description">
-            實際抵達時間依雪隧交通狀況調整。
+            🚗 返回台北
           </div>
 
         </div>
@@ -1596,10 +2236,9 @@
   </section>
 
 
-
-  <!-- =======================================
+  <!-- ==============================
        REMINDERS
-  ======================================== -->
+  ============================== -->
 
   <section class="reminder-grid">
 
@@ -1607,7 +2246,7 @@
     <article class="reminder">
 
       <h3>
-        🏨 福朋喜來登提醒
+        🏨 福朋喜來登
       </h3>
 
       <ul>
@@ -1621,21 +2260,20 @@
         </li>
 
         <li>
-          9F 休閒中心
-          12:00–13:00
-          清潔保養，不開放
+          9F 12:00–13:00
+          清潔保養不開放
         </li>
 
         <li>
-          水區需穿泳裝＋泳帽
+          水區：泳裝＋泳帽
         </li>
 
         <li>
-          遊戲室需穿襪子
+          遊戲室：需穿襪子
         </li>
 
         <li>
-          健身房需穿運動鞋
+          健身房：運動鞋
         </li>
 
         <li>
@@ -1648,7 +2286,6 @@
     </article>
 
 
-
     <article class="reminder">
 
       <h3>
@@ -1658,7 +2295,7 @@
       <ul>
 
         <li>
-          福朋可提供嬰兒床與消毒鍋
+          福朋有嬰兒床與消毒鍋
         </li>
 
         <li>
@@ -1666,11 +2303,11 @@
         </li>
 
         <li>
-          不方便共用者建議自行攜帶
+          不方便共用者自行攜帶
         </li>
 
         <li>
-          記得推車／背巾
+          推車／背巾
         </li>
 
         <li>
@@ -1678,13 +2315,12 @@
         </li>
 
         <li>
-          寶寶替換衣物
+          替換衣物
         </li>
 
       </ul>
 
     </article>
-
 
 
     <article class="reminder">
@@ -1696,15 +2332,15 @@
       <ul>
 
         <li>
-          一天只設定 1 個主要活動
-        </li>
-
-        <li>
           備選景點不用全部跑
         </li>
 
         <li>
-          寶寶需要睡覺就直接取消景點
+          一次只選一個
+        </li>
+
+        <li>
+          小孩累了就取消
         </li>
 
         <li>
@@ -1712,7 +2348,7 @@
         </li>
 
         <li>
-          咖啡廳最好事前確認能否接 21 人
+          午睡優先於趕景點
         </li>
 
       </ul>
@@ -1723,10 +2359,10 @@
   </section>
 
 
-
   <footer>
 
     宜蘭三天兩夜・親子慢遊版
+
     <br>
 
     行程可依天氣、交通與孩子狀況彈性調整
@@ -1734,6 +2370,210 @@
   </footer>
 
 </div>
+
+
+<!-- ==============================
+     FLOATING STORE MENU
+============================== -->
+
+<div
+  id="storeMenu"
+  class="store-menu"
+>
+
+  <div class="store-menu-title">
+    尋找目前位置附近
+  </div>
+
+  <button
+    onclick="findStore('7-ELEVEN')"
+  >
+    🟠 附近 7-ELEVEN
+  </button>
+
+  <button
+    onclick="findStore('全家便利商店')"
+  >
+    🔵 附近全家
+  </button>
+
+  <button
+    onclick="findStore('便利商店')"
+  >
+    🏪 所有便利商店
+  </button>
+
+</div>
+
+
+<button
+  class="store-fab"
+  onclick="toggleStoreMenu(event)"
+  aria-label="尋找附近便利商店"
+>
+
+  🏪
+
+  <span>
+    附近超商
+  </span>
+
+</button>
+
+
+<script>
+
+  /* ==============================
+     STORE MENU
+  ============================== */
+
+  function toggleStoreMenu(event) {
+
+    event.stopPropagation();
+
+    const menu =
+      document.getElementById(
+        "storeMenu"
+      );
+
+    menu.classList.toggle(
+      "show"
+    );
+
+  }
+
+
+  /* ==============================
+     FIND STORE
+  ============================== */
+
+  function findStore(keyword) {
+
+    const menu =
+      document.getElementById(
+        "storeMenu"
+      );
+
+    menu.classList.remove(
+      "show"
+    );
+
+
+    if (
+      !navigator.geolocation
+    ) {
+
+      openGoogleMapsSearch(
+        keyword
+      );
+
+      return;
+
+    }
+
+
+    navigator.geolocation.getCurrentPosition(
+
+      function(position) {
+
+        const lat =
+          position.coords.latitude;
+
+        const lng =
+          position.coords.longitude;
+
+        const url =
+          "https://www.google.com/maps/search/"
+          + "?api=1"
+          + "&query="
+          + encodeURIComponent(keyword)
+          + "&center="
+          + lat
+          + ","
+          + lng;
+
+        window.open(
+          url,
+          "_blank"
+        );
+
+      },
+
+
+      function() {
+
+        openGoogleMapsSearch(
+          keyword
+        );
+
+      },
+
+
+      {
+        enableHighAccuracy: true,
+        timeout: 7000,
+        maximumAge: 60000
+      }
+
+    );
+
+  }
+
+
+  /* ==============================
+     FALLBACK
+  ============================== */
+
+  function openGoogleMapsSearch(keyword) {
+
+    const url =
+      "https://www.google.com/maps/search/"
+      + "?api=1"
+      + "&query="
+      + encodeURIComponent(keyword);
+
+    window.open(
+      url,
+      "_blank"
+    );
+
+  }
+
+
+  /* ==============================
+     CLOSE STORE MENU
+  ============================== */
+
+  document.addEventListener(
+    "click",
+    function(event) {
+
+      const menu =
+        document.getElementById(
+          "storeMenu"
+        );
+
+      const fab =
+        document.querySelector(
+          ".store-fab"
+        );
+
+      if (
+        !menu.contains(event.target)
+        &&
+        !fab.contains(event.target)
+      ) {
+
+        menu.classList.remove(
+          "show"
+        );
+
+      }
+
+    }
+  );
+
+</script>
 
 </body>
 </html>
