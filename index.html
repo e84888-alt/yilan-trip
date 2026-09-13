@@ -1,1 +1,1739 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>宜蘭三天兩夜｜16大5小</title>
+
+  <meta
+    name="description"
+    content="9/14–9/16 宜蘭三天兩夜親子旅行行程，16位大人＋5位小孩。"
+  />
+
+  <style>
+    :root {
+      --bg: #f6f5f0;
+      --card: #ffffff;
+      --text: #25332d;
+      --muted: #738079;
+
+      --green: #6f9986;
+      --green-dark: #4f7765;
+      --green-light: #e8f1ec;
+
+      --gold: #c99535;
+      --gold-light: #fff5dc;
+
+      --blue-light: #eef7fb;
+
+      --border: #e6e6df;
+      --shadow: 0 10px 35px rgba(39, 57, 48, 0.08);
+
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        linear-gradient(
+          180deg,
+          #eef5f1 0,
+          #f8f5ed 430px,
+          var(--bg) 100%
+        );
+
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 70px;
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+
+    .hero {
+      padding: 34px;
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #dbece3,
+          #f6eee0
+        );
+
+      border: 1px solid #d7e3dc;
+      box-shadow: var(--shadow);
+
+      margin-bottom: 22px;
+    }
+
+    .hero-kicker {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0;
+      line-height: 1.2;
+
+      font-size:
+        clamp(34px, 6vw, 58px);
+
+      letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+
+      margin-top: 20px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+      padding: 7px 12px;
+
+      border-radius: 999px;
+      background: rgba(255,255,255,.78);
+
+      border: 1px solid rgba(90,120,104,.15);
+
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* ==============================
+       CORE NOTICE
+    ============================== */
+
+    .core-note {
+      padding: 20px 22px;
+
+      border-radius: 20px;
+
+      background: var(--gold-light);
+
+      border: 1px solid #edd8aa;
+
+      margin-bottom: 22px;
+    }
+
+    .core-note strong {
+      color: #7c5a1f;
+    }
+
+    /* ==============================
+       DAY CARD
+    ============================== */
+
+    .day-card {
+      overflow: hidden;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+
+      margin-bottom: 24px;
+    }
+
+    .day-header {
+      padding: 22px 24px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--green-light),
+          #faf6ed
+        );
+    }
+
+    .day-title {
+      margin: 0;
+      font-size: 27px;
+    }
+
+    .day-theme {
+      display: inline-block;
+
+      padding: 6px 11px;
+
+      border-radius: 999px;
+
+      background: white;
+
+      color: var(--green-dark);
+
+      border: 1px solid #d3e3da;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .day-body {
+      padding: 10px 24px 24px;
+    }
+
+    /* ==============================
+       TIMELINE
+    ============================== */
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 115px 1fr;
+      gap: 18px;
+
+      padding: 18px 0;
+
+      border-bottom: 1px dashed #dedfd9;
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 0;
+    }
+
+    .time {
+      font-weight: 900;
+      color: var(--green-dark);
+      font-size: 15px;
+    }
+
+    .event-title {
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .description {
+      margin-top: 4px;
+      color: var(--muted);
+    }
+
+    .important {
+      background: #f1f8f4;
+
+      border-radius: 16px;
+
+      padding-left: 12px;
+      padding-right: 12px;
+
+      margin: 7px -12px;
+    }
+
+    /* ==============================
+       BUTTONS
+    ============================== */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      margin-top: 10px;
+    }
+
+    .map-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+
+      min-height: 38px;
+
+      padding: 8px 13px;
+
+      border-radius: 10px;
+
+      background: var(--green-dark);
+      color: white;
+
+      font-weight: 800;
+      font-size: 14px;
+
+      text-decoration: none;
+
+      transition:
+        transform .15s ease,
+        opacity .15s ease;
+    }
+
+    .map-button:hover {
+      transform: translateY(-1px);
+      opacity: .92;
+    }
+
+    .map-button.secondary {
+      background: #edf3ef;
+      color: var(--green-dark);
+
+      border: 1px solid #d5e2db;
+    }
+
+    /* ==============================
+       OPTIONS
+    ============================== */
+
+    .options-area {
+      margin: 18px 0;
+
+      padding: 18px;
+
+      border-radius: 20px;
+
+      background: var(--blue-light);
+
+      border: 1px solid #d8e8ef;
+    }
+
+    .options-title {
+      margin: 0 0 5px;
+      font-size: 19px;
+    }
+
+    .options-subtitle {
+      color: var(--muted);
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .options-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(235px, 1fr));
+
+      gap: 13px;
+    }
+
+    .option-card {
+      position: relative;
+
+      padding: 16px;
+
+      border-radius: 17px;
+
+      background: white;
+
+      border: 1px solid #dae4e7;
+
+      min-height: 190px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ==============================
+       ⭐ 首選
+    ============================== */
+
+    .option-card.primary {
+      border: 2px solid var(--gold);
+
+      background:
+        linear-gradient(
+          145deg,
+          #fffef9,
+          #fff6dd
+        );
+
+      box-shadow:
+        0 8px 24px
+        rgba(185, 135, 45, .14);
+    }
+
+    .primary-badge {
+      display: inline-flex;
+
+      width: fit-content;
+
+      margin-bottom: 9px;
+
+      padding: 5px 9px;
+
+      border-radius: 999px;
+
+      background: var(--gold);
+
+      color: white;
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .option-name {
+      margin-bottom: 5px;
+
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .option-desc {
+      color: var(--muted);
+      font-size: 14px;
+
+      flex: 1;
+    }
+
+    .tags {
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+
+      margin: 3px 3px 0 0;
+
+      padding: 4px 8px;
+
+      border-radius: 999px;
+
+      background: #edf3ef;
+
+      color: #50685c;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .option-card.primary .tag {
+      background: #fff0c6;
+      color: #76551b;
+    }
+
+    /* ==============================
+       REMINDERS
+    ============================== */
+
+    .reminder-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(260px,1fr));
+
+      gap: 15px;
+    }
+
+    .reminder {
+      padding: 19px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 19px;
+
+      box-shadow: 0 6px 20px rgba(40,55,47,.04);
+    }
+
+    .reminder h3 {
+      margin: 0 0 9px;
+    }
+
+    .reminder ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+
+    footer {
+      margin-top: 35px;
+
+      text-align: center;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    /* ==============================
+       MOBILE
+    ============================== */
+
+    @media (max-width: 680px) {
+
+      .container {
+        width: min(100% - 22px, 1080px);
+      }
+
+      .hero {
+        padding: 25px 20px;
+      }
+
+      .day-header {
+        padding: 19px 17px;
+      }
+
+      .day-body {
+        padding: 7px 17px 20px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 88px 1fr;
+        gap: 11px;
+      }
+
+      .options-area {
+        padding: 14px;
+      }
+
+      .map-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- =======================================
+       HERO
+  ======================================== -->
+
+  <header class="hero">
+
+    <div class="hero-kicker">
+      YILAN FAMILY TRIP
+    </div>
+
+    <h1>宜蘭三天兩夜</h1>
+
+    <div class="hero-subtitle">
+      16 位大人 ＋ 5 位小孩<br>
+      5歲・1歲半・1歲・8個月・7個月
+    </div>
+
+    <div class="chips">
+      <span class="chip">📅 9/14－9/16</span>
+      <span class="chip">👨‍👩‍👧‍👦 21 人</span>
+      <span class="chip">🏨 福朋喜來登</span>
+      <span class="chip">🏡 圍微住</span>
+      <span class="chip">👶 親子慢遊</span>
+      <span class="chip">🔄 現場彈性調整</span>
+    </div>
+
+  </header>
+
+
+  <section class="core-note">
+
+    <strong>這次旅行的核心原則</strong>
+
+    <br><br>
+
+    ① Day 1 不塞太多景點，
+    <strong>把福朋喜來登的設施玩好玩滿。</strong>
+
+    <br>
+
+    ② Day 2 下午入住圍微住之後，
+    <strong>不再安排外出景點</strong>，
+    直接在民宿一路待到隔天退房。
+
+    <br>
+
+    ③ 未確定的行程保留多個選項，
+    當天依照
+    <strong>天氣、孩子精神、午睡狀況與大家體力</strong>
+    再決定。
+
+  </section>
+
+
+  <!-- =======================================
+       DAY 1
+  ======================================== -->
+
+  <section class="day-card">
+
+    <div class="day-header">
+
+      <h2 class="day-title">
+        Day 1｜9/14 礁溪
+      </h2>
+
+      <span class="day-theme">
+        ♨️ 飯店度假日
+      </span>
+
+    </div>
+
+
+    <div class="day-body">
+
+      <div class="timeline-item">
+
+        <div class="time">
+          09:30
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🚗 台北集合出發
+          </div>
+
+          <div class="description">
+            預留雪隧路況以及 21 人集合時間。
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          11:30–13:00
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🍲 上乘三家涮涮鍋・礁溪店
+          </div>
+
+          <div class="description">
+            Day 1 固定午餐。
+            21 人建議提前訂位並確認兒童椅。
+          </div>
+
+          <div class="buttons">
+
+            <a
+              class="map-button"
+              href="https://maps.app.goo.gl/bcrXsGRN6gVwpCkz7"
+              target="_blank"
+            >
+              📍 Google Maps
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- DAY 1 備用 -->
+
+      <div class="options-area">
+
+        <h3 class="options-title">
+          午餐後的備用方案
+        </h3>
+
+        <div class="options-subtitle">
+          原則上直接去飯店。
+          只有「時間很多＋飯店還不能使用設施」才從下面挑一個。
+        </div>
+
+
+        <div class="options-grid">
+
+
+          <article class="option-card primary">
+
+            <span class="primary-badge">
+              ⭐ 首選備案
+            </span>
+
+            <div class="option-name">
+              金車生物科技水產養殖研發中心
+            </div>
+
+            <div class="option-desc">
+              室內海洋生態、水產、魚類、鯊魚與魟魚相關展示。
+              5歲孩子有內容，小小孩也能坐推車。
+            </div>
+
+            <div class="tags">
+              <span class="tag">雨天OK</span>
+              <span class="tag">推車友善</span>
+              <span class="tag">60–90分鐘</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=金車生物科技水產養殖研發中心"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="option-card">
+
+            <div class="option-name">
+              金車礁溪蘭花園
+            </div>
+
+            <div class="option-desc">
+              溫室、蘭花、觀葉植物與動植物生態。
+              適合走輕鬆路線。
+            </div>
+
+            <div class="tags">
+              <span class="tag">室內/溫室</span>
+              <span class="tag">推車</span>
+              <span class="tag">60–90分鐘</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=金車礁溪蘭花園"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="option-card">
+
+            <div class="option-name">
+              礁溪附近散步
+            </div>
+
+            <div class="option-desc">
+              如果剩下不到一小時，
+              就不要再跑景點，附近散步後直接入住。
+            </div>
+
+            <div class="tags">
+              <span class="tag">最省力</span>
+              <span class="tag">隨時取消</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=礁溪溫泉公園"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item important">
+
+        <div class="time">
+          13:00後
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🏨 直接前往礁溪福朋喜來登
+          </div>
+
+          <div class="description">
+            先停車、寄放行李、辦理報到。
+            如果飯店允許提早使用設施，就直接開始玩。
+          </div>
+
+          <div class="buttons">
+
+            <a
+              class="map-button"
+              href="https://www.google.com/maps/search/?api=1&query=宜蘭礁溪福朋喜來登酒店"
+              target="_blank"
+            >
+              📍 Google Maps
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item important">
+
+        <div class="time">
+          15:00
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            ✅ 正式 Check-in
+          </div>
+
+          <div class="description">
+            拿到房間後進入飯店度假模式。
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item important">
+
+        <div class="time">
+          15:00–18:00
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🏊 9F 休閒中心
+          </div>
+
+          <div class="description">
+            無邊際泳池、兒童戲水池、
+            Fun 樂園、SPA 等自由分流。
+            小小孩累了可以直接回房午睡。
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          18:00後
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🍽️ 晚餐＋泡湯＋自由活動
+          </div>
+
+          <div class="description">
+            晚餐後依照大家體力，
+            可以回遊戲室、泡湯或直接休息。
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================
+       DAY 2
+  ======================================== -->
+
+  <section class="day-card">
+
+    <div class="day-header">
+
+      <h2 class="day-title">
+        Day 2｜9/15 宜蘭 → 圍微住
+      </h2>
+
+      <span class="day-theme">
+        🏡 下午開始包棟模式
+      </span>
+
+    </div>
+
+
+    <div class="day-body">
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          08:00–09:30
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            ☕ 飯店早餐
+          </div>
+
+          <div class="description">
+            不趕行程，讓有小小孩的家庭慢慢整理。
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          09:30–10:45
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🧳 整理行李・房內休息
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          11:00
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            Check-out
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          11:30–12:45
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🍗 大仁哥蔗香脆皮桶仔雞
+          </div>
+
+          <div class="description">
+            Day 2 固定午餐。
+          </div>
+
+          <div class="buttons">
+
+            <a
+              class="map-button"
+              href="https://maps.app.goo.gl/6ybKWVfnbMTS4r9p8"
+              target="_blank"
+            >
+              📍 Google Maps
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="options-area">
+
+        <h3 class="options-title">
+          午餐後｜現場選 1 個
+        </h3>
+
+        <div class="options-subtitle">
+          原則只排一站。
+          如果孩子累了，全部取消直接去民宿也可以。
+        </div>
+
+
+        <div class="options-grid">
+
+
+          <article class="option-card primary">
+
+            <span class="primary-badge">
+              ⭐ 目前首選
+            </span>
+
+            <div class="option-name">
+              龍潭湖
+            </div>
+
+            <div class="option-desc">
+              最沒有壓力的方案。
+              推車散步、看湖、拍照，
+              不用走完整環湖。
+            </div>
+
+            <div class="tags">
+              <span class="tag">免費</span>
+              <span class="tag">推車友善</span>
+              <span class="tag">60–90分鐘</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=宜蘭龍潭湖"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="option-card">
+
+            <div class="option-name">
+              勝洋休閒農場
+            </div>
+
+            <div class="option-desc">
+              水草、生態、DIY。
+              若希望 Day 2 有一個比較完整的景點，
+              可改選這個。
+            </div>
+
+            <div class="tags">
+              <span class="tag">生態</span>
+              <span class="tag">5歲較有感</span>
+              <span class="tag">1.5–2小時</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=勝洋休閒農場"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="option-card">
+
+            <div class="option-name">
+              潭酵天地觀光工廠
+            </div>
+
+            <div class="option-desc">
+              如果下雨、太熱，
+              改成室內／半室內行程。
+            </div>
+
+            <div class="tags">
+              <span class="tag">雨天首選</span>
+              <span class="tag">親子</span>
+              <span class="tag">1–1.5小時</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://maps.app.goo.gl/PmrxXUkMr4ZmCekZ6"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="option-card">
+
+            <div class="option-name">
+              壯圍沙丘生態園區
+            </div>
+
+            <div class="option-desc">
+              適合天氣好時走走、拍照，
+              不需要停留太久。
+            </div>
+
+            <div class="tags">
+              <span class="tag">海線</span>
+              <span class="tag">免費</span>
+              <span class="tag">45–60分鐘</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://share.google/RwaQYCLq5BCarH1Gy"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="option-card">
+
+            <div class="option-name">
+              三寸日光
+            </div>
+
+            <div class="option-desc">
+              如果大家不想玩景點，
+              想坐下來喝咖啡聊天，
+              可以改成休息型行程。
+            </div>
+
+            <div class="tags">
+              <span class="tag">咖啡</span>
+              <span class="tag">大人休息</span>
+              <span class="tag">21人需確認</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://maps.app.goo.gl/WKT3RvxT9JPcQEvF7"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="option-card">
+
+            <div class="option-name">
+              永鎮濱海遊憩區
+            </div>
+
+            <div class="option-desc">
+              天氣很好時短暫看海。
+              不建議安排太久。
+            </div>
+
+            <div class="tags">
+              <span class="tag">看海</span>
+              <span class="tag">晴天</span>
+              <span class="tag">30–45分鐘</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://maps.app.goo.gl/sy8cAFTd5VU2M1kr5"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="option-card">
+
+            <div class="option-name">
+              等日初
+            </div>
+
+            <div class="option-desc">
+              海景咖啡廳。
+              目前以現場候位為主，
+              21 人團體風險較高，所以順位較後。
+            </div>
+
+            <div class="tags">
+              <span class="tag">海景</span>
+              <span class="tag">咖啡</span>
+              <span class="tag">候位風險</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://maps.app.goo.gl/z8dJRuWP4t8PCGbU9"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+
+
+      <div class="timeline-item important">
+
+        <div class="time">
+          約 15:00 後
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🏡 入住圍微住
+          </div>
+
+          <div class="description">
+            <strong>
+              從這個時間開始不再安排外出景點。
+            </strong>
+
+            下午、晚上一路待在民宿，
+            隔天退房後才離開。
+          </div>
+
+          <div class="buttons">
+
+            <a
+              class="map-button"
+              href="https://www.google.com/maps/search/?api=1&query=圍微住宜蘭"
+              target="_blank"
+            >
+              📍 Google Maps
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item important">
+
+        <div class="time">
+          下午～晚上
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🛋️ 民宿自由時間
+          </div>
+
+          <div class="description">
+            小孩午睡、大人聊天、聚餐、
+            親子活動、宵夜、洗澡，
+            不再趕下一個景點。
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================
+       DAY 3
+  ======================================== -->
+
+  <section class="day-card">
+
+    <div class="day-header">
+
+      <h2 class="day-title">
+        Day 3｜9/16 冬山 → 蘇澳
+      </h2>
+
+      <span class="day-theme">
+        🌿 湖景＋鯖魚
+      </span>
+
+    </div>
+
+
+    <div class="day-body">
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          08:00–09:30
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🍞 民宿早餐＋整理
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item important">
+
+        <div class="time">
+          退房前
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🏡 繼續享受圍微住
+          </div>
+
+          <div class="description">
+            不為了跑早場景點而提早離開。
+            民宿可以待到退房時間。
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          約 10:00
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            Check-out
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="options-area">
+
+        <h3 class="options-title">
+          Day 3 上午
+        </h3>
+
+        <div class="options-subtitle">
+          午餐固定在大鯖魚夢工廠，
+          上午依照天氣調整。
+        </div>
+
+
+        <div class="options-grid">
+
+
+          <article class="option-card primary">
+
+            <span class="primary-badge">
+              ⭐ 首選
+            </span>
+
+            <div class="option-name">
+              梅花湖
+            </div>
+
+            <div class="option-desc">
+              湖邊輕鬆散步、看風景、拍照。
+              不要求完整環湖，
+              走到大家覺得剛好即可。
+            </div>
+
+            <div class="tags">
+              <span class="tag">晴天首選</span>
+              <span class="tag">自然</span>
+              <span class="tag">60–80分鐘</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=宜蘭梅花湖"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="option-card">
+
+            <div class="option-name">
+              金車水產養殖研發中心
+            </div>
+
+            <div class="option-desc">
+              如果下雨，
+              可以改成室內海洋生態景點。
+            </div>
+
+            <div class="tags">
+              <span class="tag">雨天替代</span>
+              <span class="tag">室內</span>
+              <span class="tag">推車</span>
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=金車生物科技水產養殖研發中心"
+                target="_blank"
+              >
+                📍 Google Maps
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="option-card">
+
+            <div class="option-name">
+              直接前往蘇澳
+            </div>
+
+            <div class="option-desc">
+              如果前一晚大家玩得太晚，
+              上午直接不排景點。
+            </div>
+
+            <div class="tags">
+              <span class="tag">最輕鬆</span>
+              <span class="tag">寶寶累時</span>
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+
+
+      <div class="timeline-item important">
+
+        <div class="time">
+          約 12:00
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🐟 大鯖魚夢工廠午餐
+          </div>
+
+          <div class="description">
+            Day 3 午餐固定安排在這裡。
+            吃完不用再移車，
+            直接留下來參觀。
+          </div>
+
+          <div class="buttons">
+
+            <a
+              class="map-button"
+              href="https://www.google.com/maps/search/?api=1&query=大鯖魚夢工廠"
+              target="_blank"
+            >
+              📍 Google Maps
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          13:30–14:30
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🐠 大鯖魚夢工廠參觀
+          </div>
+
+          <div class="description">
+            室內參觀、互動展示、買伴手禮，
+            作為回程前最後一站。
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          約 15:00
+        </div>
+
+        <div>
+
+          <div class="event-title">
+            🚗 出發返回台北
+          </div>
+
+          <div class="description">
+            實際抵達時間依雪隧交通狀況調整。
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================
+       REMINDERS
+  ======================================== -->
+
+  <section class="reminder-grid">
+
+
+    <article class="reminder">
+
+      <h3>
+        🏨 福朋喜來登提醒
+      </h3>
+
+      <ul>
+
+        <li>
+          9/14 15:00 入住
+        </li>
+
+        <li>
+          9/15 11:00 退房
+        </li>
+
+        <li>
+          9F 休閒中心
+          12:00–13:00
+          清潔保養，不開放
+        </li>
+
+        <li>
+          水區需穿泳裝＋泳帽
+        </li>
+
+        <li>
+          遊戲室需穿襪子
+        </li>
+
+        <li>
+          健身房需穿運動鞋
+        </li>
+
+        <li>
+          無瓶裝水，
+          梯廳有飲水機
+        </li>
+
+      </ul>
+
+    </article>
+
+
+
+    <article class="reminder">
+
+      <h3>
+        👶 嬰幼兒用品
+      </h3>
+
+      <ul>
+
+        <li>
+          福朋可提供嬰兒床與消毒鍋
+        </li>
+
+        <li>
+          圍微住只有 1 台消毒鍋
+        </li>
+
+        <li>
+          不方便共用者建議自行攜帶
+        </li>
+
+        <li>
+          記得推車／背巾
+        </li>
+
+        <li>
+          玩水尿布
+        </li>
+
+        <li>
+          寶寶替換衣物
+        </li>
+
+      </ul>
+
+    </article>
+
+
+
+    <article class="reminder">
+
+      <h3>
+        💡 行程原則
+      </h3>
+
+      <ul>
+
+        <li>
+          一天只設定 1 個主要活動
+        </li>
+
+        <li>
+          備選景點不用全部跑
+        </li>
+
+        <li>
+          寶寶需要睡覺就直接取消景點
+        </li>
+
+        <li>
+          21 人移動要預留集合時間
+        </li>
+
+        <li>
+          咖啡廳最好事前確認能否接 21 人
+        </li>
+
+      </ul>
+
+    </article>
+
+
+  </section>
+
+
+
+  <footer>
+
+    宜蘭三天兩夜・親子慢遊版
+    <br>
+
+    行程可依天氣、交通與孩子狀況彈性調整
+
+  </footer>
+
+</div>
+
+</body>
+</html>
